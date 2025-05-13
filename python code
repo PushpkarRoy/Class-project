@@ -1,0 +1,98 @@
+ Q1 write a program to print sum of natural number between 1 - 7. print the sum progressively i.e after adding each natural numbre print sum so far
+
+sum = 0
+i = 1
+while i <= 7:
+    sum += i
+    print(f"Sum after adding {i} is: {sum}")
+    i += 1
+    
+# Q2 Write a program to print whether a given character is an upper case lower case or a digital or any other character.
+
+def check_character(char):
+    if char.isupper():
+        print(f"'{char}' is an uppercase letter.")
+    elif char.islower():
+        print(f"'{char}' is a lowercase letter.")
+    elif char.isdigit():
+        print(f"'{char}' is a digit.")
+    else:
+        print(f"'{char}' is a special character or whitespace.")
+
+char = input("Enter a character: ")
+check_character(char)
+
+#Q3 Write a program that reads 2 number and an arithmetic operator and displays the computed result 
+
+def calculate(num1, num2, operator):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Division by zero!"
+    else:
+        return "Error: Invalid operator!"
+
+def main():
+    num1 = float(input("Enter the first number: "))
+    operator = input("Enter the operator (+, -, *, /): ")
+    num2 = float(input("Enter the second number: "))
+
+    result = calculate(num1, num2, operator)
+    print(f"{num1} {operator} {num2} = {result}")
+
+if __name__ == "__main__":
+    main()
+
+#Q4 Write a program to test a number whether it is negative or positive.
+
+def check_number(num):
+    if num > 0:
+        print(f"{num} is a positive number.")
+    elif num < 0:
+        print(f"{num} is a negative number.")
+    else:
+        print(f"{num} is zero.")
+
+num = float(input("Enter a number: "))
+check_number(num)
+
+#Q5 Write a program to test the divisibility of a number with another number i.e If number is divisible by another number. 
+
+def check_divisibility(num1, num2):
+    if num2 == 0:
+        print("Error: Division by zero is not allowed.")
+    elif num1 % num2 == 0:
+        print(f"{num1} is divisible by {num2}.")
+    else:
+        print(f"{num1} is not divisible by {num2}.")
+
+num1 = int(input("Enter the number to be checked: "))
+num2 = int(input("Enter the divisor: "))
+
+check_divisibility(num1, num2)
+
+#Q6 Write a program to calculate discount as 10 % of sales amount if it is 10,000 or more. Otherwise it calculate discount as 5% of sales amount.
+
+def calculate_discount(sales_amount):
+    if sales_amount >= 10000:
+        discount = sales_amount * 0.10
+    else:
+        discount = sales_amount * 0.05
+    return discount
+
+def main():
+    sales_amount = float(input("Enter the sales amount: "))
+    discount = calculate_discount(sales_amount)
+    print(f"Discount: {discount:.2f}")
+    print(f"Amount to be paid: {sales_amount - discount:.2f}")
+
+if __name__ == "__main__":
+    main()
+
